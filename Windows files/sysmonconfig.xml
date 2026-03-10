@@ -1,0 +1,33 @@
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>sha256</HashAlgorithms>
+
+  <EventFiltering>
+
+    <!-- Process Creation -->
+    <ProcessCreate onmatch="include">
+    </ProcessCreate>
+
+    <!-- Network Connections -->
+    <NetworkConnect onmatch="include">
+    </NetworkConnect>
+
+    <!-- File Creation -->
+    <FileCreate onmatch="include">
+    </FileCreate>
+
+    <!-- Registry Persistence -->
+    <RegistryEvent onmatch="include">
+      <TargetObject condition="contains">Run</TargetObject>
+      <TargetObject condition="contains">RunOnce</TargetObject>
+    </RegistryEvent>
+
+    <!-- Driver Loads -->
+    <DriverLoad onmatch="include">
+    </DriverLoad>
+
+    <!-- Image Loads -->
+    <ImageLoad onmatch="include">
+    </ImageLoad>
+
+  </EventFiltering>
+</Sysmon>
