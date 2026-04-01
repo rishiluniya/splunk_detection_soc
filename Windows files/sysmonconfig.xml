@@ -3,31 +3,23 @@
 
   <EventFiltering>
 
-    <!-- Process Creation -->
     <ProcessCreate onmatch="include">
     </ProcessCreate>
 
-    <!-- Network Connections -->
     <NetworkConnect onmatch="include">
+        <Image condition="is not">dummy.exe</Image>
     </NetworkConnect>
 
-    <!-- File Creation -->
-    <FileCreate onmatch="include">
-    </FileCreate>
+    <FileCreate onmatch="include" />
 
-    <!-- Registry Persistence -->
     <RegistryEvent onmatch="include">
       <TargetObject condition="contains">Run</TargetObject>
       <TargetObject condition="contains">RunOnce</TargetObject>
     </RegistryEvent>
 
-    <!-- Driver Loads -->
-    <DriverLoad onmatch="include">
-    </DriverLoad>
+    <DriverLoad onmatch="include" />
 
-    <!-- Image Loads -->
-    <ImageLoad onmatch="include">
-    </ImageLoad>
+    <ImageLoad onmatch="include" />
 
   </EventFiltering>
 </Sysmon>
