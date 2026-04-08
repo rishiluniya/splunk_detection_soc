@@ -1,4 +1,4 @@
-# Splunk Detection Engineering Home Lab
+# Endpoint Detection Engineering Lab using Splunk
 
 
 
